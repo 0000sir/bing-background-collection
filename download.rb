@@ -15,9 +15,9 @@ img_url = doc.at_xpath('//images/image/url')
 url = prefix + img_url.content
 output_filename = date.content + ".jpg"
  
-#system("cd images && wget #{url} -O #{output_filename} && cd ..")
+system("cd images && wget #{url} -O #{output_filename} && cd ..")
 
 pwd = `pwd`
 img_uri = "#{pwd.strip!}/images/#{output_filename}"
 
-system("gsettings set org.gnome.desktop.background picture-uri file://#{img_uri}") if File.exist?(img_uri)
+#system("gsettings set org.gnome.desktop.background picture-uri file://#{img_uri}") if File.exist?(img_uri)
